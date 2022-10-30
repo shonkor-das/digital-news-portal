@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Button, Image } from 'react-bootstrap';
+import { Image } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -12,14 +12,14 @@ import Button from 'react-bootstrap/Button';
 
 
 const Header = () => {
-    const { user, logOut } = useContext(AuthContext)
+    const { user, logOut } = useContext(AuthContext);
 
-    const handleLogOut = () =>{
+    const handleLogOut = () => {
         logOut()
-        .then(() =>{})
-        .catch(error =>{
-            console.error('error', error);
-        })
+            .then(() => { })
+            .catch(error => {
+                console.error('error', error);
+            })
     }
 
     return (
@@ -53,15 +53,16 @@ const Header = () => {
                                     </>
                                     :
                                     <>
-                                        <Link to='/login'>Login</Link>
+                                        <Link to='/login' className='me-2'>Login</Link>
                                         <Link to='/register'>Register</Link>
                                     </>
                             }
                         </Nav.Link>
                         <Nav.Link eventKey={2} href="#memes">
                             {user?.photoURL ?
-                                <Image style={{ height: '30px' }} roundedCircle
-                                    src={user.photoURL}></Image>
+                                <Image style={{ height: '30px' }}
+                                    roundedCircle
+                                    src={user?.photoURL}></Image>
                                 : <FaUser></FaUser>
                             }
                         </Nav.Link>

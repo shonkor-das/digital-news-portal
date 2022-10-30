@@ -15,3 +15,13 @@
 8. 
 
 */
+
+/*
+-----------------------------------------------------
+            PrivateRoute Create
+
+1. only allow authentication user to visit the route
+2. 
+3. Redirect user to the route they wanted to go before login
+
+*/
